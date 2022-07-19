@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.cognizant.authenticationservice.AuthTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in com.cognizant.authenticationservice.AuthTests
+com.cognizant.authenticationservice.AuthTests  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Configuration error: found multiple declarations of @BootstrapWith for test class [com.cognizant.authenticationservice.AuthTests]: [@org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.context.SpringBootTestContextBootstrapper), @org.springframework.test.context.BootstrapWith(value=org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper)]
+
