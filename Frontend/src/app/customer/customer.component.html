@@ -1,0 +1,176 @@
+<app-header-cust></app-header-cust>
+<div style="text-align: center;">
+<marquee> <h1><i>Welcome to The Retail Banking System</i></h1></marquee>
+</div>
+
+<br>
+
+<div style="text-align:center;">
+  <h2>Customer Details</h2>
+  <br>
+</div>
+<div class="container" style="max-width: 1360px">
+  <table cellpadding="5" class="table table-striped" id="table1">
+    <tr style="background-color: antiquewhite;">
+      <th>CUSTOMER ID</th>
+      <th>CUSTOMER NAME</th>
+      <th>DOB</th>
+      <th>PAN</th>
+      <th>ADDRESS</th>
+      <th>ACCOUNTS DETAILS</th>
+    </tr>
+    <tr>
+      <td>{{customerValue.userid}}</td>
+      <td>{{customerValue.username}}</td>
+      <td>{{customerValue.dateOfBirth}}</td>
+      <td>{{customerValue.pan}}</td>
+      <td>{{customerValue.address}}</td>
+      <td>
+        <table cellpadding="5" id="table2" class="table-striped">
+          <tr>
+            <th>ACCOUNT ID</th>
+            <th>CURRENT BALANCE</th>
+            <th>ACCOUNT TYPE</th>
+            <th>OWNER NAME</th>
+          </tr>
+          <tr *ngFor="let account of customerValue.accounts">
+            <td>{{account.accountId}}</td>
+            <td>{{account.currentBalance}}</td>
+            <td>{{account.accountType}}</td>
+            <td>{{account.ownerName}}</td>
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+  </table>
+</div>
+<br>
+
+
+<div class="row">
+  <div class="col-md-10">
+    <div class="leftside">
+
+      <div class="row container justify-content-around" style=" margin-top: -135px; margin-left: -27px;">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div style="margin: 10em 0em 0em 0em;">
+          <div class="card bg-dark text-white" style="width: 420px; height: 485px; background-color: #f3d8d8">
+            <img alt="" class="card-img-top" src="../../assets/images/withdraw2.jpg" style="height:200px">
+            <div class="card-body">
+              <h4 class="card-title">Withdraw Amount</h4>
+              <hr width="100%" size="8" color="white">
+              <form #details="ngForm">
+                <label>Select The Account : </label>
+                <select id="aId" name="aId" [ngModel]="aId" #acctId="ngModel" style="width: 187px;">
+                  <option *ngFor="let account of customerValue.accounts"> {{account.accountId}} </option>
+                </select>
+                <label></label><br>
+                <label>Withdrawl Amount :</label>
+                <input type="number" name="amount" placeholder="Enter the amount" min="100" ngModel #amount="ngModel" required/>
+                <input type="hidden" name="reference" value="withdraw" required />
+                <br> <br><br> <button type="submit" name="View" class="btn btn-primary" (click)="onWithdraw(details)" style="margin-left: 195px !important;">Withdraw
+                  Amount</button>
+                <div *ngIf="withdrawmsg">
+                  <p class="text-white" id="message">{{withdrawmsg}}</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div style="margin: 10em 0em 1em -4em;">
+          <div class="card bg-dark text-white" style="width: 420px;height: 485px; background-color: #f3d8d8">
+            <img alt="" class="card-img-top" src="../../assets/images/transfer.jpg" style="height:200px">
+            <div class="card-body">
+              <h4 class="card-title">Transfer Amount</h4>
+              <hr width="100%" size="8" color="white">
+              <form #value="ngForm">
+                <label>Select Sender Account : </label>
+                <select id="accountid" name="accountid" [ngModel]="accountid" #accountid="ngModel" style="width:173px;">
+                  <option *ngFor="let account of customerValue.accounts"> {{account.accountId}} </option>
+                </select>
+                <br>
+                <label>Reciever Account No : </label>
+                <input type="number" name="targetAccount" placeholder="Enter Reciever Account ID" ngModel
+                  #targetAccount="ngModel" style="width:183px;"/>
+
+                <br>
+                <label>Enter the Amount : </label>
+                <input type="number" name="amount" placeholder="Enter the amount" min="100" ngModel #amount="ngModel" style="width:205px"/>
+                <input type="hidden" name="reference" value="transfer" />
+                <br> <button type="button" (click)="onTransfer(value)" name="View" class="btn btn-primary" style="margin-top: 8px; margin-left: 215px !important;"
+                  [disabled]="!value.valid">Transfer Amount</button>
+              </form>
+              <div *ngIf="transfermsg">
+                <p class="text-white" id="message">{{transfermsg}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div class="col-md-2" style="margin-left: -200px; margin-top: 25px;">
+    <div class="rightside" style="width:335px;">
+      <table>
+        <tr>
+          <th colspan="2">
+            <h4>Transaction Details</h4>
+          </th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+        </tr>
+      </table>
+    </div>
+  </div> -->
+</div>
+<br>
+<div style="text-align: left; margin-left:83px;" >
+  <form>
+    <div>
+      <label for="accId"><h3>Transaction Details : </h3></label>
+      <select name="accId" [ngModel]="accId" (ngModelChange)="onSelectedChange($event)" class="select"  style="width:250px; height:40px;">
+        <option *ngFor="let account of customerValue.accounts">{{account.accountId}}
+        </option>
+      </select>
+      <button class="btn btn-warning" type="button" (click)="onDisplay()" style="margin:5px; height:40px; width:100px; background-color: chartreuse;"> <b>Submit</b> </button>
+    </div>
+  </form>
+  <br>
+  <div class="container" *ngIf="display" style="margin-left: -5px !important;">
+    <table class="table table-striped">
+      <tr>
+        <th>Sender Account Id</th>
+        <th>Sender Name</th>
+        <th>Reciever Account Id</th>
+        <th>Reciever Name</th>
+        <th>Amount</th>
+        <th>Transaction Date</th>
+        <th>Reference</th>
+      </tr>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{transaction.sourceAccountId}}</td>
+        <td>{{transaction.sourceOwnerName}}</td>
+        <td>{{transaction.targetAccountId}}</td>
+        <td>{{transaction.targetOwnerName}}</td>
+        <td>{{transaction.amount}}</td>
+        <td>{{transaction.initiationDate}}</td>
+        <td>{{transaction.reference}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<br>
+<br>
+<br>

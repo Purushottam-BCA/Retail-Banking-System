@@ -1,0 +1,14 @@
+<div class="sticky-top bg-dark d-flex align-content-center" >
+  <a  href="/" class="active nav-link text-white"> 
+    <h1><i>Retail Banking System</i></h1>
+  </a>
+  <ul class="align-content-center container nav nav-pills justify-content-end" style="width: 1000px ">
+    <li class="nav-item"><a class="nav-link active" routerLink="/employeedashboard" class="btn btn-outline-light"
+        style="margin-right: 15px;" *ngIf="!val">Home
+      </a>
+    </li>
+    <li class="nav-item"><a class="nav-link active" class="btn btn-outline-light" routerLink="/" *ngIf="val">Logout
+      </a>
+    </li>
+  </ul>
+</div>

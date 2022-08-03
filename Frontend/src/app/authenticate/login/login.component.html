@@ -1,0 +1,59 @@
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+  <div class="container">
+    <div class="card login-card" style="height: auto; width: auto;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card-body">
+            <div class="brand-wrapper" style="text-align:center">
+              <p style="color: rgb(12, 12, 12); color: rgb(10, 9, 9); font-size: 45px;"><b>{{role}}</b></p>
+            </div>
+            <br>
+            <div class="alert alert-danger" *ngIf="error" style="text-align: center;">
+              {{errorMessage}}
+            </div>
+            <!-- <p class="login-card-description"
+              style="color: rgb(10, 10, 10); font-family:'Karla', sans-serif; font-size:20px;"><b>Sign in</b></p> -->
+
+            <form (submit)="onSubmit(login)" #login="ngForm">
+              <div class="form-group">
+                <label for="Id" path="userid" class="sr-only"><b>UserId </b>
+                </label><br>
+                <input type="text" path="userid" name="Id" id="Id" class="form-control" ngModel #userid="ngModel"
+                  placeholder="User Id" autocomplete="off"/>
+              </div>
+              <div class="form-group mb-4">
+                <label for="password" path="password" class="sr-only"><b>Password</b>
+                </label><br>
+                <input type="password" path="password" name="password" id="password" class="form-control"
+                  placeholder="Password" ngModel #password="ngModel" />
+              </div>
+              <input type="hidden" path="role" name="role" id="role" />
+              <br>
+              <div style="text-align: center;">
+                <button name="login" id="login" class="btn btn-info btn-lg form-control" type="submit" 
+                  style="background-color: #0e6f51; height:54px"> Login </button>
+              </div>
+              <br>
+              <div style="text-align:center;" *ngIf="customer">
+                <button name="login" id="login" class="btn btn-info btn-lg form-control" type="submit"
+                  style="background-color: rgb(18, 49, 90); height:54px;" routerLink="/loginEmployee"> Login Employee </button>
+              </div>
+              <div style="text-align:center;" *ngIf="employee">
+                <button name="login" id="login" class="btn btn-info btn-lg form-control" type="submit"
+                  style="background-color: rgb(18, 49, 90); height:54px;" routerLink="/loginCustomer"> Login Customer </button>
+              </div>
+            </form>
+            <br>
+            <nav class="login-card-footer-nav">
+              <a style="font-size: 14px; color: #919aa3; margin-right: 10px;">Terms of use.</a>
+              <a style="font-size: 14px; color: #919aa3;">Privacy policy</a>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="../../../assets/images/login.png" width="100%" height="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

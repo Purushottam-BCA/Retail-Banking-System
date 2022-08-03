@@ -1,0 +1,20 @@
+a.disabled {
+    pointer-events: none;
+    cursor: not-allowed; 
+ }
+
+ label{
+     margin: 10px;
+ }
+.row{
+    margin-top: -50px !important;
+}
+ .message{
+    color: orange;
+    margin-left: 10px;
+ }
+
+ .card-title{
+    text-align: center !important;
+    
+ }

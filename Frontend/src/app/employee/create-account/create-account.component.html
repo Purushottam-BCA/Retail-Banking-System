@@ -1,0 +1,93 @@
+<app-header-work></app-header-work>
+<section>
+  <div class="container" id="login-box">
+    <div class="container justify-content">
+      <div class="alert-success" style="text-align: center;">
+        <p><b>{{createmsg}}</b></p>
+      </div>
+      <div class="alert-success" style="text-align: center;">
+        <p><b>{{errormsg}}</b></p>
+      </div>
+      <form #f="ngForm">
+        <table class="container">
+          <thead>
+            <td colspan="3" style="text-align: center;">
+              <h2><i>Customer Account Creation!!</i></h2>
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </thead>
+          <tr>
+          </tr>
+          <tr>
+            <th>Customer ID: </th>
+
+            <td>
+              <input type="text" name="customerId" autocomplete="off" required="required" [value]="id"
+                class="form-control" readonly>
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>OPENING AMOUNT:</th>
+
+            <td>
+              <input type="text" name="Amount" placeholder="Amount" autocomplete="off" required="required" ngModel
+                #Amount="ngModel" class="form-control" />
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>ACCOUNT TYPE:</th>
+
+            <td>
+              <select type="text" path="accountType" placeholder="Account Type" name="accountType"
+                [ngModel]="accountType" #accountType="ngModel" autocomplete="off">
+                <option>Savings</option>
+                <option>Current</option>
+              </select>
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>OPENING DATE:</th>
+
+            <td>
+              <input type="date" id="date" path="dateOfBirth" name="dob" placeholder="Date of Birth" ngModel
+                #dob="ngModel" required="required" class="form-control" />
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>OWNER NAME: </th>
+
+            <td>
+              <input type="text" path="owername" name="ownername" placeholder="Owner Name" autocomplete="off" ngModel
+                #owername="ngModel" maxlength="10" required="required" class="form-control" />
+            </td>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+          <tr style="text-align: center;">
+            <th><input type="submit" name="signup_submit" class="btn btn-success" value="Create"
+                (click)="createAccount(f)" style=" margin-left:180px;" /></th>
+            <td>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+</section>

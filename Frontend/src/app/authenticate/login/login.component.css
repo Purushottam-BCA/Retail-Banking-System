@@ -1,0 +1,5 @@
+.sr-only {
+    position: inherit !important;
+    width: 70px !important;
+    height: 32px !important;
+}

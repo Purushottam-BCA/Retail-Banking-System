@@ -1,0 +1,17 @@
+#table1,td,th{
+    border: 2px solid black;
+}
+
+#table2{
+    border: 1px solid black;
+}
+
+label{
+    margin: 10px;
+}
+
+
+tr{
+    border: 2px solid black;
+    vertical-align: baseline;
+    }
