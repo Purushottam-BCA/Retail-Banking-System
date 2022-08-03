@@ -1,0 +1,11 @@
+com\rulesservice\model\ServiceResponseTest.class
+com\rulesservice\model\AppUserTest.class
+com\rulesservice\model\ErrorDetailsTest.class
+com\rulesservice\RulesServiceApplicationTests.class
+com\rulesservice\model\AuthenticationResponseTest.class
+com\rulesservice\model\AccountTest.class
+com\rulesservice\model\RulesInputTest.class
+com\rulesservice\model\AccountInputTest.class
+com\rulesservice\model\TransactionTest.class
+com\rulesservice\service\RulesServiceImplTest.class
+com\rulesservice\controller\RulesControllerTest.class
