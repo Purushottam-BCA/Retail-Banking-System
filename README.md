@@ -16,21 +16,21 @@
 - <img src="Frontend/snapshots/use_Case.png" width="80%"/>
  
 ## 🎯 UI Snap-Shots (EMPLOYEE)
-- <img src="Frontend/snapshots/1.png" width="70%" />
+- <img src="Frontend/snapshots/1.png" width="75%" />
 
-- <img src="Frontend/snapshots/2.png" width="70%"/>
+- <img src="Frontend/snapshots/2.png" width="75%"/>
  
-- <img src="Frontend/snapshots/3.png" width="70%"/>
+- <img src="Frontend/snapshots/3.png" width="75%"/>
  
-- <img src="Frontend/snapshots/4.png" width="70%"/>
+- <img src="Frontend/snapshots/4.png" width="75%"/>
  
-- <img src="Frontend/snapshots/5.png" width="70%"/>
+- <img src="Frontend/snapshots/5.png" width="75%"/>
 
 ## 🎯 UI Snap-Shots (CUSTOMER)
-- <img src="Frontend/snapshots/6.png" width="70%"/>
+- <img src="Frontend/snapshots/6.png" width="75%"/>
  
-- <img src="Frontend/snapshots/7.png" width="70%"/>
+- <img src="Frontend/snapshots/7.png" width="75%"/>
  
-- <img src="Frontend/snapshots/8.png" width="70%"/>
+- <img src="Frontend/snapshots/8.png" width="75%"/>
  
-- <img src="Frontend/snapshots/9.png" width="70%"/>
+- <img src="Frontend/snapshots/9.png" width="75%"/>
